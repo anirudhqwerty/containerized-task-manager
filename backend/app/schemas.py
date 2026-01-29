@@ -1,0 +1,14 @@
+from pydantic import BaseModel
+
+
+class TaskCreate(BaseModel):
+    title: str
+
+
+class TaskResponse(BaseModel):
+    id: int
+    title: str
+    status: str
+
+    class Config:
+        orm_mode = True
