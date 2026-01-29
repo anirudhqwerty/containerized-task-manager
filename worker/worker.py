@@ -12,6 +12,12 @@ def process_task(ch, method, properties, body):
 
     print(f"Processing task {task_id}")
 
+    with engine.begin() as conn:
+        conn.execute(
+            text("UPDATE tasks SET status = 'PROCESSING' WHERE id = :id"),
+            {"id": task_id}
+        )
+
     time.sleep(5)
 
     with engine.begin() as conn:
