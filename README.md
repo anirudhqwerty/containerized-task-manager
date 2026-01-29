@@ -1,8 +1,11 @@
+
 # Docker
 - Learnt they key concepts of docker ( images and containers) , how images are blue prints which include the code and the dependencies  , and containers are running instance of that image
 - downloaded docker desktop app and pulled hello-world image and then ran the image which made a container
 - learnt the basic docker commands
 - learnt what dockerfile is and how they are used to create images
+
+---
 
 # FastAPI
 - revised basic concepts  , GET and POST requests
@@ -27,7 +30,7 @@ Most of the FastAPI apps look like this :
 - model.py - creates table "task"
 - schemas.py - makes sure the shape and format of the incoming data is correct
 - main.py - FastAPI app 
-
+---
 # RabbitMQ
 - it is a message broker program which ensures asynchronous communication between different different parts of system
 - it does so by storing the messages in a queue
@@ -37,3 +40,12 @@ Most of the FastAPI apps look like this :
 ### now practically learning what it does
 - downloaded pika library , what it does is that it lets python talk to RabbitMQ
 - wrote a function which connects to RabbitMQ and sends the takss id as a message into a queue
+
+# Worker
+- worker is just a python program that does the task
+```
+Backend - creates the task
+RabbitMQ - holds the task
+Worker - does the task
+```
+- in this project , the task for the worker is just to read the task, simulate processing by added fake waiting , and then update db status to DONE.
