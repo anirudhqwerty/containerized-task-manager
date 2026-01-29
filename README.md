@@ -27,3 +27,13 @@ Most of the FastAPI apps look like this :
 - model.py - creates table "task"
 - schemas.py - makes sure the shape and format of the incoming data is correct
 - main.py - FastAPI app 
+
+# RabbitMQ
+- it is a message broker program which ensures asynchronous communication between different different parts of system
+- it does so by storing the messages in a queue
+- there is a Producer(program which sends the message) , Queue(waiting line which holds the message), Consumer( program which recieves the message) and the Broker which is RabbitMQ itself
+- RabbitMQ stores a message for an indefinite period of time , the message will only stay in the queue until the consumer takes it
+- in this project , the backend is Producer and workers are the consumers , message is the task_id
+### now practically learning what it does
+- downloaded pika library , what it does is that it lets python talk to RabbitMQ
+- wrote a function which connects to RabbitMQ and sends the takss id as a message into a queue
