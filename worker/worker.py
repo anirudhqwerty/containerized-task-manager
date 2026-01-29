@@ -31,8 +31,8 @@ def main():
                 pika.ConnectionParameters(host="rabbitmq")
             )
             break
-        except pika.exceptions.AMQPConnectionError:
-            print("Waiting for RabbitMQ...")
+        except Exception as e:
+            print("Waiting for RabbitMQ...", e)
             time.sleep(3)
     channel = connection.channel()
 

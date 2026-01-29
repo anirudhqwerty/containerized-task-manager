@@ -49,3 +49,6 @@ RabbitMQ - holds the task
 Worker - does the task
 ```
 - in this project , the task for the worker is just to read the task, simulate processing by added fake waiting , and then update db status to DONE.
+
+# Frontend
+- 
